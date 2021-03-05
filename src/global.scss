@@ -24,3 +24,31 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+
+.alertBack {
+  color: var(--ion-color-dark) !important;
+}
+
+.alertRetry {
+  color: var(--ion-color-dindon) !important;
+}
+
+
+.slide-onboarding {
+  .swiper-pagination {
+    bottom: calc(4vh + 14px + 22px + 3vh + 48px + 3vh) !important;
+  }
+
+  .swiper-pagination-bullet {
+    width: 8px !important;
+    height: 8px !important;
+    border: 1px solid white !important;
+    background: transparent !important;
+    opacity: 1 !important;
+  }
+
+  .swiper-pagination-bullet-active {
+    background: white !important;
+  }
+}

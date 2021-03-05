@@ -1,20 +1,51 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
+<ion-header>
+  <ion-toolbar color="dindon">
     <ion-title>
-      Blank
+      Dindon Assesment
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <form [formGroup]="surveyForm" (ngSubmit)="postEncuesta()">
+    <ng-container *ngIf="!skeleton">
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+    <ion-list *ngFor="let question of questions.data.questions">
+      <ion-radio-group [formControlName]="question.id">
+        <ion-list-header>
+          <ion-label>{{question.question_text}}</ion-label>
+        </ion-list-header>
+        <ion-item *ngFor="let ans of question.question_options">
+          <ion-label>{{ans.option_text}}</ion-label>
+          <ion-radio slot="start" [value]="ans.id" color="dindon"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+    <div class="ion-text-center">
+      <ion-button type="submit" [disabled]="!surveyForm.valid" color="dindon">
+        Guardar
+      </ion-button>
+    </div>    
+  </ng-container>
+    <ng-container *ngIf="skeleton">
+      <ion-list *ngFor="let sk of [0,1,2]">
+        <ion-radio-group>
+          <ion-list-header>
+            <ion-label>
+              <ion-skeleton-text animated style="width: 80%">
+              </ion-skeleton-text>
+            </ion-label>
+          </ion-list-header>
+  
+          <ion-item *ngFor="let ans of [0,1,2]">
+            <ion-label>
+              <ion-skeleton-text animated style="width: 50%">
+              </ion-skeleton-text>
+            </ion-label>
+          </ion-item>
+        </ion-radio-group>
+      </ion-list>
+    </ng-container>
+    
+  </form>
 </ion-content>

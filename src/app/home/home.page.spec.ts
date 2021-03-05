@@ -21,4 +21,8 @@ describe('HomePage', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it('El esqueleto debe siempre ser true', () => {
+    let skeleton: boolean = component.skeleton;
+    expect(skeleton).toBeTruthy();
+  });
 });

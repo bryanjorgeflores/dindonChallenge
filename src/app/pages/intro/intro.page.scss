@@ -1,0 +1,64 @@
+ion-slides {
+    height: 100%;
+    // overflow: hidden !important;
+  }
+
+  .slide-item{
+    width: 100vw;
+    height: calc(100vh);
+    overflow: hidden;
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-sizing: content-box;
+    .info{
+      padding: 0px 16px;
+      position: fixed;
+      bottom: calc(4vh + 14px + 22px + 3vh + 48px + 3vh + 10px + 9vh);
+      width: 100vw;
+      z-index: 1;
+      .text_title{
+        color: #fff;
+        font-size: 20px;
+        font-family: Roboto;
+        font-weight: bold;
+        margin: 0px;
+      }
+  
+    }
+    .des{
+      padding: 0px 32px;
+      width: 100vw;
+      position: fixed;
+      bottom: calc(4vh + 14px + 22px + 3vh + 48px + 3vh + 10px + 3vh);
+      z-index: 1;
+      .text_des{
+        margin: 0px;
+        color: #fff;
+        font-size: 14px;
+        font-family: Roboto;
+        line-height: 18px;
+      }
+    }
+  
+  }
+
+
+  .button_div{
+    position: fixed;
+    width: 100%;
+    padding: 0px 10px;
+    bottom: 5px;
+    z-index: 99;
+    .bg_button{
+      height: 48px !important;
+      --border-radius: 8px !important;
+      --background: var(--ion-color-dindon);
+      margin: 0px !important;
+      font-size: 18px !important;
+      font-family: Roboto;
+      font-weight: 400;
+      letter-spacing: 0px !important;
+      text-transform: initial;
+    }
+  
+  }

@@ -1,0 +1,21 @@
+<ion-content>
+  <div class="button_div">
+    <ion-button expand="block" class="bg_button" (click)="skipIntro()">Continuar</ion-button>
+    <div class="box2"></div>
+  </div>
+  <ion-slides pager="true" [options]="slideOpts" class="slide-onboarding">
+    <ion-slide *ngFor="let element of slides; let i = index" [ngStyle]="bg(element,i)"  class="slide-item">
+
+      <div class="info">
+        <p class="text_title">{{element.title}}</p>
+      </div>
+
+      <div class="des">
+        <p class="text_des" [ngClass]="des.length < 1 && 'textTransparent'" *ngFor="let des of element.des; let iDes = index">{{des.length > 0 ? des : '.'}}</p>
+      </div>
+
+      <div class="blur" id="blur" [ngStyle]="bgColor(element)" > </div>
+    </ion-slide>
+  </ion-slides>
+  
+</ion-content>
